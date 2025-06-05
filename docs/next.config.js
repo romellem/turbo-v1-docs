@@ -53,13 +53,15 @@ const OLD_TURBOREPO_ROUTES = [
 ];
 
 const nextConfig = withNextra({
-  sentry: {
-    hideSourceMaps: true,
-  },
+  output: "standalone",
+  // sentry: {
+  //   hideSourceMaps: true,
+  // },
   reactStrictMode: true,
   experimental: {
     legacyBrowsers: false,
   },
+  images:{unoptimized: true},
   webpack: (config, { webpack }) => {
     config.plugins.push(
       new webpack.DefinePlugin({
@@ -178,4 +180,5 @@ const nextConfig = withNextra({
   },
 });
 
-module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+// module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+module.exports = (nextConfig);
