@@ -62,6 +62,7 @@ const nextConfig = withNextra({
     legacyBrowsers: false,
   },
   images:{unoptimized: true},
+  assetPrefix: '/turbo-v1-docs',
   basePath: '/turbo-v1-docs',
   webpack: (config, { webpack }) => {
     config.plugins.push(
