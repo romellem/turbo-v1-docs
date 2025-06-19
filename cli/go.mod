@@ -1,6 +1,6 @@
 module github.com/vercel/turbo/cli
 
-go 1.20
+go 1.18
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.5
