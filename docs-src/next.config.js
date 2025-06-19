@@ -1,4 +1,3 @@
-const { withSentryConfig } = require("@sentry/nextjs");
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.js",
@@ -62,19 +61,8 @@ const nextConfig = withNextra({
     legacyBrowsers: false,
   },
   images:{unoptimized: true},
-  assetPrefix: '/turbo-v1-docs',
-  basePath: '/turbo-v1-docs',
-  webpack: (config, { webpack }) => {
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        __SENTRY_DEBUG__: false,
-        __SENTRY_TRACING__: false,
-      })
-    );
-
-    // return the modified config
-    return config;
-  },
+  // assetPrefix: '/turbo-v1-docs',
+  // basePath: '/turbo-v1-docs',
   rewrites() {
     return {
       beforeFiles: [
